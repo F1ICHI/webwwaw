@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Посольство вкусной еды — Конструктор подарочных боксов</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="container">
+        <p class="badge">Посольство вкусной еды</p>
+        <h1>Соберите идеальный подарочный набор</h1>
+        <p class="subtitle">
+          Выберите размер бокса, добавьте любимые продукты и персонализируйте упаковку.
+        </p>
+      </div>
+    </header>
+
+    <main class="container layout">
+      <section class="panel">
+        <h2>1. Настройка бокса</h2>
+        <div class="fields">
+          <label>
+            Размер
+            <select id="boxSize"></select>
+          </label>
+
+          <label>
+            Цвет упаковки
+            <select id="boxColor"></select>
+          </label>
+
+          <label>
+            Лента
+            <select id="ribbonColor"></select>
+          </label>
+
+          <label>
+            Текст открытки
+            <textarea id="cardText" maxlength="140" placeholder="Например: С теплом и вкусными пожеланиями!"></textarea>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="section-head">
+          <h2>2. Продукция компании</h2>
+          <input id="search" type="search" placeholder="Поиск по продуктам" />
+        </div>
+        <div id="products" class="products"></div>
+      </section>
+
+      <section class="panel summary">
+        <h2>3. Ваш набор</h2>
+        <ul id="selectedItems" class="selected-items"></ul>
+        <div class="totals">
+          <div><span>Товаров:</span> <strong id="totalItems">0</strong></div>
+          <div><span>Вес:</span> <strong id="totalWeight">0 г</strong></div>
+          <div><span>Стоимость:</span> <strong id="totalPrice">0 ₽</strong></div>
+          <div><span>Осталось мест:</span> <strong id="remainingSlots">0</strong></div>
+        </div>
+        <button id="resetBtn" class="secondary">Очистить набор</button>
+        <button id="checkoutBtn">Оформить заявку</button>
+      </section>
+    </main>
+
+    <dialog id="orderDialog">
+      <h3>Заявка сформирована</h3>
+      <p id="orderText"></p>
+      <button id="closeDialogBtn">Закрыть</button>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
