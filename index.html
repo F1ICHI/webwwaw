@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Посольство вкусной еды — Конструктор подарочного бокса</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__content container">
+        <p class="hero__tag">Посольство вкусной еды</p>
+        <h1>Соберите идеальный подарочный набор</h1>
+        <p>
+          Выберите размер бокса, наполнение из фирменной продукции и персонализируйте
+          подарок для получателя.
+        </p>
+      </div>
+    </header>
+
+    <main class="container app-layout">
+      <section class="panel products-panel" aria-label="Каталог продукции">
+        <div class="panel__header">
+          <h2>1. Продукция</h2>
+          <p>Добавляйте позиции в корзину, чтобы сформировать набор.</p>
+        </div>
+        <div id="products" class="products-grid"></div>
+      </section>
+
+      <aside class="panel summary-panel" aria-label="Параметры и состав набора">
+        <div class="panel__header">
+          <h2>2. Кастомизация бокса</h2>
+        </div>
+
+        <form id="customization-form" class="customization">
+          <label>
+            Размер бокса
+            <select id="boxSize" name="boxSize">
+              <option value="small">Маленький (до 4 позиций)</option>
+              <option value="medium" selected>Средний (до 8 позиций)</option>
+              <option value="large">Большой (до 12 позиций)</option>
+            </select>
+          </label>
+
+          <label>
+            Цвет коробки
+            <select id="boxColor" name="boxColor">
+              <option value="Крафт">Крафт</option>
+              <option value="Изумруд">Изумруд</option>
+              <option value="Бордовый">Бордовый</option>
+              <option value="Слоновая кость">Слоновая кость</option>
+            </select>
+          </label>
+
+          <label>
+            Лента
+            <select id="ribbon" name="ribbon">
+              <option value="Атласная">Атласная</option>
+              <option value="Джутовая">Джутовая</option>
+              <option value="Без ленты">Без ленты</option>
+            </select>
+          </label>
+
+          <label>
+            Имя получателя
+            <input id="recipient" name="recipient" type="text" placeholder="Например, Анна" />
+          </label>
+
+          <label>
+            Текст открытки
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              maxlength="160"
+              placeholder="Ваше поздравление"
+            ></textarea>
+          </label>
+        </form>
+
+        <div class="panel__header">
+          <h2>3. Ваш набор</h2>
+        </div>
+        <ul id="cart" class="cart-list"></ul>
+
+        <div class="summary-stats">
+          <div><span>Позиций:</span> <strong id="itemsCount">0</strong></div>
+          <div><span>Лимит:</span> <strong id="boxLimit">8</strong></div>
+          <div><span>Стоимость:</span> <strong id="totalPrice">0 ₽</strong></div>
+        </div>
+
+        <button id="checkoutButton" class="button" type="button">Оформить набор</button>
+        <p id="status" class="status" aria-live="polite"></p>
+      </aside>
+    </main>
+
+    <footer class="container footer">
+      <p>© 2026 «Посольство вкусной еды». Конструктор подарочных наборов.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
